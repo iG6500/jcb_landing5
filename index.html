@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <script data-goatcounter="https://CHSEED.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
-<title>Készletkisöprő Rendezvény – Július 30–31. | Chemical Seed</title>
+<title>Készletkisöprő Rendezvény – Július 30–31. | Chemical-Seed</title>
 <meta name="description" content="Készletkisöprő rendezvény július 30–31-én! KUHN, JCB és JOSKIN gépek kedvezményes áron – az árak csak a rendezvény résztvevőire vonatkoznak. Regisztrálj most, ajándékcsomag vár a helyszínen!">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -17,7 +17,9 @@
   --ink-soft:#4a4a4a;
   --ink-dim:#8a8a88;
   --line:#d8d8d5;
-  --accent:#e30613;
+  --accent:#f7b119;
+  --accent-deep:#b5820b;
+  --error:#e30613;
   --white:#ffffff;
 }
 *{margin:0;padding:0;box-sizing:border-box}
@@ -32,7 +34,7 @@ img{max-width:100%;display:block}
 .nav-inner{display:flex;align-items:center;justify-content:space-between;padding:18px 24px;max-width:1240px;margin:0 auto}
 .nav .logo{font-family:'Michroma',sans-serif;font-size:1rem;letter-spacing:.28em;text-transform:uppercase;text-decoration:none;color:var(--ink)}
 .nav-cta{font-family:'Michroma',sans-serif;font-size:.7rem;letter-spacing:.18em;text-transform:uppercase;text-decoration:none;color:var(--bg);background:var(--ink);padding:12px 26px;border-radius:2px;transition:background .2s}
-.nav-cta:hover{background:var(--accent)}
+.nav-cta:hover{background:var(--accent);color:var(--ink)}
 
 /* ===== HERO ===== */
 .hero{position:relative;padding:60px 0 40px;overflow:hidden}
@@ -46,14 +48,14 @@ img{max-width:100%;display:block}
 /* side menu */
 .side-menu{position:absolute;right:24px;top:120px;z-index:5;display:flex;flex-direction:column;gap:18px;text-align:right}
 .side-menu a{font-family:'Michroma',sans-serif;font-size:.62rem;letter-spacing:.22em;text-transform:uppercase;color:var(--ink-soft);text-decoration:none;padding-bottom:6px;border-bottom:1px solid var(--ink);min-width:150px;transition:color .2s,border-color .2s}
-.side-menu a:hover{color:var(--accent);border-color:var(--accent)}
+.side-menu a:hover{color:var(--accent-deep);border-color:var(--accent-deep)}
 /* date marker left */
 .hero-marker{position:absolute;left:24px;top:130px;z-index:5;font-family:'JetBrains Mono',monospace;font-size:.72rem;letter-spacing:.2em;color:var(--ink-soft);writing-mode:vertical-rl;transform:rotate(180deg)}
 .hero-sub{text-align:center;max-width:620px;margin:36px auto 0;color:var(--ink-soft);font-size:1rem;position:relative;z-index:3}
 .hero-sub strong{color:var(--ink)}
 .hero-actions{text-align:center;margin-top:30px;position:relative;z-index:3}
 .btn-primary{display:inline-block;font-family:'Michroma',sans-serif;font-size:.78rem;letter-spacing:.2em;text-transform:uppercase;background:var(--ink);color:var(--bg);text-decoration:none;padding:18px 48px;border-radius:2px;transition:background .2s,transform .15s}
-.btn-primary:hover{background:var(--accent);transform:translateY(-2px)}
+.btn-primary:hover{background:var(--accent);color:var(--ink);transform:translateY(-2px)}
 .btn-micro{display:block;margin-top:14px;font-size:.85rem;color:var(--ink-dim)}
 
 /* ===== COUNTDOWN ===== */
@@ -76,7 +78,7 @@ img{max-width:100%;display:block}
 .about-text p strong{color:var(--ink)}
 .perks{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:34px}
 .perk{border:1px solid var(--line);padding:20px;font-size:.88rem}
-.perk .display{font-size:.62rem;letter-spacing:.18em;display:block;margin-bottom:8px;color:var(--accent)}
+.perk .display{font-size:.62rem;letter-spacing:.18em;display:block;margin-bottom:8px;color:var(--accent-deep)}
 
 /* ===== MACHINES ===== */
 .machines{padding:110px 0}
@@ -97,17 +99,17 @@ img{max-width:100%;display:block}
 .machine-body{padding:26px 26px 30px;display:flex;flex-direction:column;flex:1;border-top:1px solid var(--line)}
 .machine-cat{font-family:'Michroma',sans-serif;font-size:.56rem;letter-spacing:.22em;text-transform:uppercase;color:var(--ink-dim);margin-bottom:10px}
 .machine-name{font-weight:800;font-size:1.08rem;letter-spacing:-.01em;line-height:1.3;margin-bottom:20px}
-.demo-badge{display:inline-block;font-family:'Michroma',sans-serif;font-size:.52rem;letter-spacing:.2em;text-transform:uppercase;color:var(--accent);border:1px solid var(--accent);padding:5px 12px;margin-bottom:12px;width:fit-content}
+.demo-badge{display:inline-block;font-family:'Michroma',sans-serif;font-size:.52rem;letter-spacing:.2em;text-transform:uppercase;color:var(--accent-deep);border:1px solid var(--accent-deep);padding:5px 12px;margin-bottom:12px;width:fit-content}
 .machine-price{margin-top:auto;display:flex;align-items:flex-end;justify-content:space-between;gap:12px}
 .machine-price .label{font-size:.7rem;text-transform:uppercase;letter-spacing:.12em;color:var(--ink-dim);display:block;margin-bottom:2px}
 .machine-price .value{font-family:'JetBrains Mono',monospace;font-size:1.25rem;font-weight:700}
 .machine-price .value.tbd{font-size:.85rem;font-weight:600;color:var(--ink-soft)}
 .machine-cta{font-family:'Michroma',sans-serif;font-size:.58rem;letter-spacing:.18em;text-transform:uppercase;color:var(--ink);text-decoration:none;border-bottom:1px solid var(--ink);padding-bottom:4px;white-space:nowrap;transition:color .2s,border-color .2s}
-.machine-cta:hover{color:var(--accent);border-color:var(--accent)}
+.machine-cta:hover{color:var(--accent-deep);border-color:var(--accent-deep)}
 
 /* ===== PRICE NOTE ===== */
 .price-note{margin-top:70px;border:1px solid var(--ink);padding:30px 36px;display:flex;gap:20px;align-items:center;background:var(--white)}
-.price-note .mark{font-family:'Archivo Black',sans-serif;font-size:2rem;color:var(--accent);line-height:1}
+.price-note .mark{font-family:'Archivo Black',sans-serif;font-size:2rem;color:var(--accent-deep);line-height:1}
 .price-note p{font-size:.95rem;color:var(--ink-soft)}
 .price-note strong{color:var(--ink)}
 
@@ -129,12 +131,12 @@ img{max-width:100%;display:block}
 .gdpr-row input[type="checkbox"]{width:20px;height:20px;accent-color:var(--accent);margin-top:2px;flex-shrink:0}
 .gdpr-row label{font-size:.86rem;color:#a0a09e}
 .gdpr-row label .req{color:var(--accent)}
-.submit-btn{grid-column:1/-1;background:var(--bg);color:var(--ink);border:none;font-family:'Michroma',sans-serif;font-size:.8rem;letter-spacing:.24em;text-transform:uppercase;padding:20px;cursor:pointer;transition:background .2s,color .2s;margin-top:14px}
-.submit-btn:hover{background:var(--accent);color:var(--white)}
+.submit-btn{grid-column:1/-1;background:var(--accent);color:var(--ink);border:none;font-family:'Michroma',sans-serif;font-size:.8rem;letter-spacing:.24em;text-transform:uppercase;padding:20px;cursor:pointer;transition:background .2s,color .2s;margin-top:14px}
+.submit-btn:hover{background:var(--bg);color:var(--ink)}
 .submit-btn:disabled{opacity:.5;cursor:wait}
 .form-response{grid-column:1/-1;display:none;padding:16px 20px;font-size:.92rem;font-weight:600;border:1px solid}
 .form-response.success{display:block;border-color:#4caf7d;color:#8fd8ae;background:rgba(76,175,125,.08)}
-.form-response.error{display:block;border-color:var(--accent);color:#ff8a8a;background:rgba(227,6,19,.08)}
+.form-response.error{display:block;border-color:var(--error);color:#ff8a8a;background:rgba(227,6,19,.08)}
 
 /* ===== FOOTER ===== */
 footer{padding:60px 0 40px;background:var(--ink);border-top:1px solid #2a2a28;color:#7a7a78;font-size:.82rem}
@@ -482,7 +484,7 @@ footer .logo{font-family:'Michroma',sans-serif;font-size:.85rem;letter-spacing:.
   <div class="container">
     <div class="footer-inner">
       <div class="logo">Chemical Seed</div>
-      <p>© 2026 Chemical Seed Kft. · Az árak a készlet erejéig, kizárólag a rendezvényen résztvevőkre érvényesek.</p>
+      <p>© 2026 Chemical-Seed Kft. · Az árak a készlet erejéig, kizárólag a rendezvényen résztvevőkre érvényesek.</p>
     </div>
   </div>
 </footer>
