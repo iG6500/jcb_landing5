@@ -8,146 +8,185 @@
 <meta name="description" content="Készletkisöprő rendezvény július 30–31-én! KUHN, JCB és JOSKIN gépek kedvezményes áron – az árak csak a rendezvény résztvevőire vonatkoznak. Regisztrálj most, ajándékcsomag vár a helyszínen!">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Michroma&family=Inter:wght@400;500;600;700;800&family=Archivo+Black&family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet">
 <style>
 :root{
-  --bg:#0d0f0d;
-  --bg-card:#161a16;
-  --bg-card-hover:#1c211c;
-  --accent:#ffd500;
-  --accent-dark:#e6c000;
-  --green:#2e7d32;
-  --joskin:#00a651;
-  --kuhn:#e30613;
-  --jcb:#f0a500;
-  --text:#f2f2f0;
-  --text-dim:#9aa09a;
-  --border:#2a302a;
-  --radius:14px;
+  --bg:#f4f4f2;
+  --bg-alt:#ececea;
+  --ink:#0e0e0e;
+  --ink-soft:#4a4a4a;
+  --ink-dim:#8a8a88;
+  --line:#d8d8d5;
+  --accent:#e30613;
+  --white:#ffffff;
 }
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;line-height:1.6;overflow-x:hidden}
+body{background:var(--bg);color:var(--ink);font-family:'Inter',sans-serif;line-height:1.65;overflow-x:hidden}
 img{max-width:100%;display:block}
-.container{max-width:1200px;margin:0 auto;padding:0 20px}
+.container{max-width:1240px;margin:0 auto;padding:0 24px}
+.display{font-family:'Michroma',sans-serif;text-transform:uppercase}
 
-/* ===== TOP BAR ===== */
-.topbar{background:var(--accent);color:#111;text-align:center;padding:10px 16px;font-weight:700;font-size:.95rem;letter-spacing:.02em}
-.topbar span{font-family:'JetBrains Mono',monospace}
+/* ===== NAV ===== */
+.nav{position:sticky;top:0;z-index:100;background:rgba(244,244,242,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;padding:18px 24px;max-width:1240px;margin:0 auto}
+.nav .logo{font-family:'Michroma',sans-serif;font-size:1rem;letter-spacing:.28em;text-transform:uppercase;text-decoration:none;color:var(--ink)}
+.nav-cta{font-family:'Michroma',sans-serif;font-size:.7rem;letter-spacing:.18em;text-transform:uppercase;text-decoration:none;color:var(--bg);background:var(--ink);padding:12px 26px;border-radius:2px;transition:background .2s}
+.nav-cta:hover{background:var(--accent)}
 
 /* ===== HERO ===== */
-.hero{padding:70px 0 50px;text-align:center;background:
-  radial-gradient(ellipse 80% 60% at 50% -10%, rgba(255,213,0,.12), transparent),
-  var(--bg)}
-.hero .badge{display:inline-block;background:rgba(255,213,0,.12);border:1px solid var(--accent);color:var(--accent);font-family:'JetBrains Mono',monospace;font-size:.85rem;font-weight:700;padding:8px 18px;border-radius:100px;margin-bottom:24px;letter-spacing:.08em;text-transform:uppercase}
-.hero h1{font-family:'Archivo Black',sans-serif;font-size:clamp(2.2rem,6vw,4.2rem);line-height:1.05;text-transform:uppercase;margin-bottom:18px}
-.hero h1 .yellow{color:var(--accent)}
-.hero .sub{font-size:clamp(1.05rem,2.5vw,1.3rem);color:var(--text-dim);max-width:720px;margin:0 auto 14px}
-.hero .date-loc{font-family:'JetBrains Mono',monospace;font-size:clamp(1rem,2.5vw,1.25rem);font-weight:700;color:var(--text);margin-bottom:34px}
-.hero .date-loc .sep{color:var(--accent);margin:0 10px}
-.cta-btn{display:inline-block;background:var(--accent);color:#111;font-family:'Archivo Black',sans-serif;font-size:1.1rem;text-transform:uppercase;letter-spacing:.04em;padding:18px 44px;border-radius:100px;text-decoration:none;transition:transform .15s,box-shadow .15s;box-shadow:0 8px 30px rgba(255,213,0,.25)}
-.cta-btn:hover{transform:translateY(-2px);box-shadow:0 12px 40px rgba(255,213,0,.4)}
-.cta-micro{display:block;margin-top:14px;font-size:.88rem;color:var(--text-dim)}
+.hero{position:relative;padding:60px 0 40px;overflow:hidden}
+.hero-inner{position:relative;max-width:1240px;margin:0 auto;padding:0 24px}
+.hero-kicker{text-align:center;font-family:'Michroma',sans-serif;font-size:clamp(.7rem,1.6vw,.95rem);letter-spacing:.5em;text-transform:uppercase;color:var(--ink-soft);margin-bottom:6px}
+.hero-giant{position:relative;text-align:center;font-family:'Archivo Black',sans-serif;font-size:clamp(3rem,12vw,11rem);line-height:.9;letter-spacing:-.02em;color:var(--ink);user-select:none;white-space:nowrap}
+.hero-giant .thin{color:transparent;-webkit-text-stroke:2px var(--ink)}
+.hero-photo{position:relative;margin:42px calc(50% - 50vw) 0;height:clamp(280px,50vw,560px);overflow:hidden}
+.hero-photo img{width:100%;height:100%;object-fit:cover}
+.hero-photo .caption{position:absolute;left:24px;bottom:20px;font-family:'JetBrains Mono',monospace;font-size:.68rem;letter-spacing:.18em;text-transform:uppercase;color:var(--white);background:rgba(14,14,14,.55);padding:8px 16px;backdrop-filter:blur(4px)}
+/* side menu */
+.side-menu{position:absolute;right:24px;top:120px;z-index:5;display:flex;flex-direction:column;gap:18px;text-align:right}
+.side-menu a{font-family:'Michroma',sans-serif;font-size:.62rem;letter-spacing:.22em;text-transform:uppercase;color:var(--ink-soft);text-decoration:none;padding-bottom:6px;border-bottom:1px solid var(--ink);min-width:150px;transition:color .2s,border-color .2s}
+.side-menu a:hover{color:var(--accent);border-color:var(--accent)}
+/* date marker left */
+.hero-marker{position:absolute;left:24px;top:130px;z-index:5;font-family:'JetBrains Mono',monospace;font-size:.72rem;letter-spacing:.2em;color:var(--ink-soft);writing-mode:vertical-rl;transform:rotate(180deg)}
+.hero-sub{text-align:center;max-width:620px;margin:36px auto 0;color:var(--ink-soft);font-size:1rem;position:relative;z-index:3}
+.hero-sub strong{color:var(--ink)}
+.hero-actions{text-align:center;margin-top:30px;position:relative;z-index:3}
+.btn-primary{display:inline-block;font-family:'Michroma',sans-serif;font-size:.78rem;letter-spacing:.2em;text-transform:uppercase;background:var(--ink);color:var(--bg);text-decoration:none;padding:18px 48px;border-radius:2px;transition:background .2s,transform .15s}
+.btn-primary:hover{background:var(--accent);transform:translateY(-2px)}
+.btn-micro{display:block;margin-top:14px;font-size:.85rem;color:var(--ink-dim)}
 
 /* ===== COUNTDOWN ===== */
-.countdown{display:flex;justify-content:center;gap:14px;margin:40px 0 0;flex-wrap:wrap}
-.cd-box{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:16px 10px;min-width:86px}
-.cd-box .num{font-family:'JetBrains Mono',monospace;font-size:2rem;font-weight:700;color:var(--accent)}
-.cd-box .lbl{font-size:.72rem;text-transform:uppercase;letter-spacing:.1em;color:var(--text-dim)}
+.countdown{display:flex;justify-content:center;gap:0;margin:50px auto 0;max-width:640px;border:1px solid var(--ink);position:relative;z-index:3}
+.cd-box{flex:1;text-align:center;padding:20px 8px;border-right:1px solid var(--ink)}
+.cd-box:last-child{border-right:none}
+.cd-box .num{font-family:'JetBrains Mono',monospace;font-size:clamp(1.5rem,4vw,2.4rem);font-weight:700;color:var(--ink)}
+.cd-box .lbl{font-family:'Michroma',sans-serif;font-size:.55rem;letter-spacing:.25em;text-transform:uppercase;color:var(--ink-dim)}
 
-/* ===== BENEFITS ===== */
-.benefits{padding:60px 0;background:var(--bg-card);border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
-.benefits-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:22px}
-.benefit{text-align:center;padding:26px 18px;background:var(--bg);border:1px solid var(--border);border-radius:var(--radius)}
-.benefit .icon{font-size:2.2rem;margin-bottom:12px}
-.benefit h3{font-family:'Archivo Black',sans-serif;font-size:1rem;text-transform:uppercase;margin-bottom:8px}
-.benefit p{font-size:.92rem;color:var(--text-dim)}
+/* ===== STATS / ABOUT ===== */
+.about{padding:110px 0;background:var(--white);border-top:1px solid var(--line)}
+.about-grid{display:grid;grid-template-columns:1fr 1.4fr;gap:70px;align-items:center}
+.stat{margin-bottom:44px}
+.stat:last-child{margin-bottom:0}
+.stat .num{font-size:clamp(2rem,4vw,2.8rem);font-weight:800;letter-spacing:-.02em}
+.stat .lbl{font-size:.92rem;color:var(--ink-dim)}
+.about-text h2{margin-bottom:26px}
+.section-title{font-family:'Michroma',sans-serif;font-size:clamp(1.3rem,3.6vw,2.1rem);letter-spacing:.32em;text-transform:uppercase}
+.about-text p{color:var(--ink-soft);margin-bottom:18px;max-width:560px}
+.about-text p strong{color:var(--ink)}
+.perks{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:34px}
+.perk{border:1px solid var(--line);padding:20px;font-size:.88rem}
+.perk .display{font-size:.62rem;letter-spacing:.18em;display:block;margin-bottom:8px;color:var(--accent)}
 
-/* ===== SECTIONS ===== */
-.section{padding:70px 0}
-.section-title{font-family:'Archivo Black',sans-serif;font-size:clamp(1.6rem,4vw,2.4rem);text-transform:uppercase;text-align:center;margin-bottom:12px}
-.section-title .yellow{color:var(--accent)}
-.section-sub{text-align:center;color:var(--text-dim);max-width:640px;margin:0 auto 44px}
+/* ===== MACHINES ===== */
+.machines{padding:110px 0}
+.machines .section-head{text-align:center;margin-bottom:70px}
+.machines .section-head p{color:var(--ink-dim);margin-top:16px;max-width:560px;margin-left:auto;margin-right:auto}
+.brand-block{margin-bottom:90px}
+.brand-block:last-child{margin-bottom:0}
+.brand-head{display:flex;align-items:baseline;gap:24px;margin-bottom:36px}
+.brand-head .name{font-family:'Michroma',sans-serif;font-size:clamp(1.6rem,4vw,2.6rem);letter-spacing:.14em;text-transform:uppercase}
+.brand-head .count{font-family:'JetBrains Mono',monospace;font-size:.78rem;color:var(--ink-dim);letter-spacing:.15em}
+.brand-head .rule{flex:1;height:1px;background:var(--ink)}
+.machines-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:1px;background:var(--line);border:1px solid var(--line)}
+.machine-card{background:var(--white);padding:0;display:flex;flex-direction:column;transition:background .2s}
+.machine-card:hover{background:var(--bg-alt)}
+.machine-img{aspect-ratio:16/10;display:flex;align-items:center;justify-content:center;overflow:hidden;background:var(--white)}
+.machine-img img{width:88%;height:88%;object-fit:contain;transition:transform .3s}
+.machine-card:hover .machine-img img{transform:scale(1.04)}
+.machine-body{padding:26px 26px 30px;display:flex;flex-direction:column;flex:1;border-top:1px solid var(--line)}
+.machine-cat{font-family:'Michroma',sans-serif;font-size:.56rem;letter-spacing:.22em;text-transform:uppercase;color:var(--ink-dim);margin-bottom:10px}
+.machine-name{font-weight:800;font-size:1.08rem;letter-spacing:-.01em;line-height:1.3;margin-bottom:20px}
+.demo-badge{display:inline-block;font-family:'Michroma',sans-serif;font-size:.52rem;letter-spacing:.2em;text-transform:uppercase;color:var(--accent);border:1px solid var(--accent);padding:5px 12px;margin-bottom:12px;width:fit-content}
+.machine-price{margin-top:auto;display:flex;align-items:flex-end;justify-content:space-between;gap:12px}
+.machine-price .label{font-size:.7rem;text-transform:uppercase;letter-spacing:.12em;color:var(--ink-dim);display:block;margin-bottom:2px}
+.machine-price .value{font-family:'JetBrains Mono',monospace;font-size:1.25rem;font-weight:700}
+.machine-price .value.tbd{font-size:.85rem;font-weight:600;color:var(--ink-soft)}
+.machine-cta{font-family:'Michroma',sans-serif;font-size:.58rem;letter-spacing:.18em;text-transform:uppercase;color:var(--ink);text-decoration:none;border-bottom:1px solid var(--ink);padding-bottom:4px;white-space:nowrap;transition:color .2s,border-color .2s}
+.machine-cta:hover{color:var(--accent);border-color:var(--accent)}
 
-/* ===== BRAND HEADERS ===== */
-.brand-header{display:flex;align-items:center;gap:14px;margin:50px 0 24px}
-.brand-header:first-of-type{margin-top:0}
-.brand-tag{font-family:'Archivo Black',sans-serif;font-size:1.3rem;text-transform:uppercase;padding:6px 18px;border-radius:8px}
-.brand-tag.kuhn{background:var(--kuhn);color:#fff}
-.brand-tag.jcb{background:var(--jcb);color:#111}
-.brand-tag.joskin{background:var(--joskin);color:#fff}
-.brand-line{flex:1;height:1px;background:var(--border)}
+/* ===== PRICE NOTE ===== */
+.price-note{margin-top:70px;border:1px solid var(--ink);padding:30px 36px;display:flex;gap:20px;align-items:center;background:var(--white)}
+.price-note .mark{font-family:'Archivo Black',sans-serif;font-size:2rem;color:var(--accent);line-height:1}
+.price-note p{font-size:.95rem;color:var(--ink-soft)}
+.price-note strong{color:var(--ink)}
 
-/* ===== MACHINE CARDS ===== */
-.machines-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:22px}
-.machine-card{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;display:flex;flex-direction:column;transition:transform .15s,border-color .15s}
-.machine-card:hover{transform:translateY(-4px);border-color:var(--accent);background:var(--bg-card-hover)}
-.machine-img{aspect-ratio:4/3;background:#1e231e;display:flex;align-items:center;justify-content:center;overflow:hidden}
-.machine-img img{width:100%;height:100%;object-fit:cover}
-.machine-body{padding:20px;display:flex;flex-direction:column;flex:1}
-.machine-cat{font-family:'JetBrains Mono',monospace;font-size:.72rem;text-transform:uppercase;letter-spacing:.1em;color:var(--text-dim);margin-bottom:6px}
-.machine-name{font-family:'Archivo Black',sans-serif;font-size:1.05rem;line-height:1.25;margin-bottom:14px}
-.machine-price{margin-top:auto}
-.machine-price .label{font-size:.75rem;text-transform:uppercase;letter-spacing:.08em;color:var(--text-dim);display:block}
-.machine-price .value{font-family:'JetBrains Mono',monospace;font-size:1.35rem;font-weight:700;color:var(--accent)}
-.machine-price .value.tbd{font-size:1rem;color:var(--text)}
-.demo-badge{display:inline-block;background:rgba(255,213,0,.15);border:1px solid var(--accent);color:var(--accent);font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.06em;padding:3px 10px;border-radius:100px;margin-bottom:8px;width:fit-content}
-.machine-cta{margin-top:16px;display:inline-block;text-align:center;background:transparent;border:2px solid var(--accent);color:var(--accent);font-weight:700;font-size:.9rem;text-transform:uppercase;letter-spacing:.04em;padding:10px 18px;border-radius:100px;text-decoration:none;transition:background .15s,color .15s}
-.machine-cta:hover{background:var(--accent);color:#111}
-
-/* ===== PRICE DISCLAIMER ===== */
-.price-note{margin-top:36px;background:rgba(255,213,0,.08);border:1px dashed var(--accent);border-radius:var(--radius);padding:20px 24px;text-align:center;font-size:.95rem}
-.price-note strong{color:var(--accent)}
-
-/* ===== FORM ===== */
-.form-section{background:
-  radial-gradient(ellipse 70% 50% at 50% 0%, rgba(255,213,0,.08), transparent),
-  var(--bg-card);border-top:1px solid var(--border)}
-.form-wrap{max-width:640px;margin:0 auto;background:var(--bg);border:1px solid var(--border);border-radius:var(--radius);padding:36px 30px}
-.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+/* ===== REGISZTRÁCIÓ ===== */
+.reg{padding:120px 0;background:var(--ink);color:var(--bg);position:relative;overflow:hidden}
+.reg-giant{position:absolute;top:20px;left:50%;transform:translateX(-50%);font-family:'Archivo Black',sans-serif;font-size:clamp(4rem,16vw,13rem);line-height:1;color:transparent;-webkit-text-stroke:1px rgba(244,244,242,.12);white-space:nowrap;pointer-events:none;user-select:none}
+.reg .section-head{text-align:center;margin-bottom:60px;position:relative;z-index:2}
+.reg .section-title{color:var(--bg)}
+.reg .section-head p{color:#a0a09e;margin-top:18px;max-width:560px;margin-left:auto;margin-right:auto}
+.form-wrap{max-width:680px;margin:0 auto;position:relative;z-index:2}
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px}
 .form-group{display:flex;flex-direction:column}
 .form-group.full{grid-column:1/-1}
-.form-group label{font-size:.82rem;font-weight:600;text-transform:uppercase;letter-spacing:.05em;margin-bottom:6px;color:var(--text-dim)}
+.form-group label{font-family:'Michroma',sans-serif;font-size:.56rem;letter-spacing:.22em;text-transform:uppercase;margin-bottom:10px;color:#a0a09e}
 .form-group label .req{color:var(--accent)}
-.form-group input{background:var(--bg-card);border:1px solid var(--border);border-radius:8px;padding:13px 14px;color:var(--text);font-family:'Inter',sans-serif;font-size:1rem;transition:border-color .15s}
-.form-group input:focus{outline:none;border-color:var(--accent)}
-.gdpr-row{grid-column:1/-1;display:flex;align-items:flex-start;gap:12px;background:var(--bg-card);border:1px solid var(--border);border-radius:8px;padding:14px}
+.form-group input{background:transparent;border:none;border-bottom:1px solid #4a4a48;padding:12px 2px;color:var(--bg);font-family:'Inter',sans-serif;font-size:1.05rem;transition:border-color .2s;border-radius:0}
+.form-group input:focus{outline:none;border-color:var(--bg)}
+.gdpr-row{grid-column:1/-1;display:flex;align-items:flex-start;gap:14px;padding:20px;border:1px solid #3a3a38;margin-top:8px}
 .gdpr-row input[type="checkbox"]{width:20px;height:20px;accent-color:var(--accent);margin-top:2px;flex-shrink:0}
-.gdpr-row label{font-size:.88rem;color:var(--text-dim)}
+.gdpr-row label{font-size:.86rem;color:#a0a09e}
 .gdpr-row label .req{color:var(--accent)}
-.submit-btn{grid-column:1/-1;background:var(--accent);color:#111;border:none;font-family:'Archivo Black',sans-serif;font-size:1.05rem;text-transform:uppercase;letter-spacing:.04em;padding:17px;border-radius:100px;cursor:pointer;transition:transform .15s,box-shadow .15s;margin-top:6px}
-.submit-btn:hover{transform:translateY(-2px);box-shadow:0 8px 30px rgba(255,213,0,.35)}
-.submit-btn:disabled{opacity:.6;cursor:wait;transform:none}
-.form-response{grid-column:1/-1;display:none;padding:14px 18px;border-radius:8px;font-size:.95rem;font-weight:600}
-.form-response.success{display:block;background:rgba(46,125,50,.15);border:1px solid var(--green);color:#7fd484}
-.form-response.error{display:block;background:rgba(227,6,19,.12);border:1px solid var(--kuhn);color:#ff8a8a}
+.submit-btn{grid-column:1/-1;background:var(--bg);color:var(--ink);border:none;font-family:'Michroma',sans-serif;font-size:.8rem;letter-spacing:.24em;text-transform:uppercase;padding:20px;cursor:pointer;transition:background .2s,color .2s;margin-top:14px}
+.submit-btn:hover{background:var(--accent);color:var(--white)}
+.submit-btn:disabled{opacity:.5;cursor:wait}
+.form-response{grid-column:1/-1;display:none;padding:16px 20px;font-size:.92rem;font-weight:600;border:1px solid}
+.form-response.success{display:block;border-color:#4caf7d;color:#8fd8ae;background:rgba(76,175,125,.08)}
+.form-response.error{display:block;border-color:var(--accent);color:#ff8a8a;background:rgba(227,6,19,.08)}
 
 /* ===== FOOTER ===== */
-footer{padding:40px 0;border-top:1px solid var(--border);text-align:center;color:var(--text-dim);font-size:.85rem}
-footer .brand{font-family:'Archivo Black',sans-serif;color:var(--text);font-size:1rem;margin-bottom:6px}
+footer{padding:60px 0 40px;background:var(--ink);border-top:1px solid #2a2a28;color:#7a7a78;font-size:.82rem}
+.footer-inner{display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap}
+footer .logo{font-family:'Michroma',sans-serif;font-size:.85rem;letter-spacing:.28em;text-transform:uppercase;color:var(--bg)}
 
+@media(max-width:900px){
+  .side-menu,.hero-marker{display:none}
+  .about-grid{grid-template-columns:1fr;gap:50px}
+}
 @media(max-width:640px){
   .form-grid{grid-template-columns:1fr}
-  .machines-grid{grid-template-columns:1fr}
-  .cd-box{min-width:72px;padding:12px 8px}
-  .cd-box .num{font-size:1.5rem}
+  .perks{grid-template-columns:1fr}
+  .price-note{flex-direction:column;text-align:center}
 }
 </style>
 </head>
 <body>
 
-<!-- ===== TOP BAR ===== -->
-<div class="topbar">🔥 KÉSZLETKISÖPRŐ RENDEZVÉNY <span>JÚLIUS 30–31.</span> — Az árak csak a rendezvényen résztvevőkre érvényesek!</div>
+<!-- ===== NAV ===== -->
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="#" class="logo">Chemical Seed</a>
+    <a href="#regisztracio" class="nav-cta">Regisztrálok</a>
+  </div>
+</nav>
 
 <!-- ===== HERO ===== -->
-<header class="hero">
-  <div class="container">
-    <div class="badge">Csak 2 nap · Csak regisztráltaknak</div>
-    <h1>Készletkisöprő<br><span class="yellow">Gépvásár</span></h1>
-    <p class="sub">KUHN, JCB és JOSKIN gépek kedvezményes, készletkisöprő áron. A feltüntetett árak <strong style="color:var(--text)">kizárólag a rendezvény résztvevőire vonatkoznak</strong> – regisztrálj, és foglald le a helyed!</p>
-    <p class="date-loc">📅 2026. JÚLIUS 30–31.<span class="sep">|</span>📍 HELYSZÍN <!-- TODO: helyszín pontosítása --></p>
-    <a href="#regisztracio" class="cta-btn">Regisztrálok a rendezvényre</a>
-    <span class="cta-micro">Ingyenes regisztráció · Ajándékcsomag minden regisztrálónak a helyszínen 🎁</span>
+<header class="hero" id="home">
+  <div class="hero-inner">
+    <div class="hero-marker">KÉSZLETKISÖPRŐ · 2026</div>
+    <nav class="side-menu">
+      <a href="#home">Kezdőlap</a>
+      <a href="#rolunk">A rendezvény</a>
+      <a href="#gepek">Gépek</a>
+      <a href="#regisztracio">Regisztráció</a>
+    </nav>
+
+    <div class="hero-kicker">Készletkisöprő gépvásár</div>
+    <div class="hero-giant"><span class="thin">07.</span>30–31</div>
+
+    <div class="hero-photo">
+      <img src="hero.jpg" alt="JCB Fastrac 8330 KUHN bálázóval – a rendezvény kiemelt gépei" loading="eager">
+      <span class="caption">JCB Fastrac 8330 · KUHN · a rendezvény kiemelt gépei</span>
+    </div>
+
+    <p class="hero-sub">KUHN, JCB és JOSKIN gépek készletkisöprő áron, két napig. A feltüntetett árak <strong>kizárólag a rendezvény résztvevőire vonatkoznak</strong> — regisztrálj, és foglald le a helyed.</p>
+
+    <div class="hero-actions">
+      <a href="#regisztracio" class="btn-primary">Regisztrálok a rendezvényre</a>
+      <span class="btn-micro">Ingyenes regisztráció · Ajándékcsomag minden regisztrálónak a helyszínen</span>
+    </div>
 
     <div class="countdown" id="countdown">
       <div class="cd-box"><div class="num" id="cd-days">--</div><div class="lbl">nap</div></div>
@@ -158,203 +197,242 @@ footer .brand{font-family:'Archivo Black',sans-serif;color:var(--text);font-size
   </div>
 </header>
 
-<!-- ===== BENEFITS ===== -->
-<section class="benefits">
+<!-- ===== A RENDEZVÉNY ===== -->
+<section class="about" id="rolunk">
   <div class="container">
-    <div class="benefits-grid">
-      <div class="benefit">
-        <div class="icon">🎁</div>
-        <h3>Ajándékcsomag</h3>
-        <p>Minden regisztráló ajándékcsomagot kap a helyszínen.</p>
+    <div class="about-grid">
+      <div>
+        <div class="stat"><div class="num">14+</div><div class="lbl">gép kedvezményes áron</div></div>
+        <div class="stat"><div class="num">2 nap</div><div class="lbl">2026. július 30–31.</div></div>
+        <div class="stat"><div class="num">3 márka</div><div class="lbl">KUHN · JCB · JOSKIN</div></div>
       </div>
-      <div class="benefit">
-        <div class="icon">🎉</div>
-        <h3>Meglepetés ajándék</h3>
-        <p>Minden gépvásárlás után meglepetés ajándékkal kedveskedünk.</p>
-      </div>
-      <div class="benefit">
-        <div class="icon">💰</div>
-        <h3>Kedvezményes árak</h3>
-        <p>Készletkisöprő árak, amelyek csak a rendezvényen érvényesek.</p>
-      </div>
-      <div class="benefit">
-        <div class="icon">👨‍🔧</div>
-        <h3>Szakértő kollégák</h3>
-        <p>Kollégáink a helyszínen válaszolnak minden kérdésedre.</p>
+      <div class="about-text">
+        <h2 class="section-title">A rendezvény</h2>
+        <p>Két napra megnyitjuk a kaput, és <strong>készletkisöprő áron</strong> kínáljuk raktárkészletünk gépeit. Kaszák, vetőgépek, kultivátorok, tartálykocsik és pótkocsik — mind azonnal elérhető, mind kedvezményes áron.</p>
+        <p>Szakértő kollégáink a helyszínen várnak, hogy minden műszaki és finanszírozási kérdésedre válaszoljanak.</p>
+        <div class="perks">
+          <div class="perk"><span class="display">Ajándékcsomag</span>Minden regisztráló ajándékcsomagot kap a helyszínen.</div>
+          <div class="perk"><span class="display">Meglepetés ajándék</span>Minden gépvásárlás után meglepetés ajándékkal kedveskedünk.</div>
+          <div class="perk"><span class="display">Kedvezményes árak</span>Az árak csak a rendezvényen résztvevőkre érvényesek.</div>
+          <div class="perk"><span class="display">Szakértő kollégák</span>Kérdezz bátran — a helyszínen mindenre választ kapsz.</div>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ===== MACHINES ===== -->
-<section class="section" id="gepek">
+<!-- ===== GÉPEK ===== -->
+<section class="machines" id="gepek">
   <div class="container">
-    <h2 class="section-title">A rendezvény <span class="yellow">gépei</span></h2>
-    <p class="section-sub">Ezek a gépek várnak rád kedvezményes, készletkisöprő áron. A készlet erejéig!</p>
+    <div class="section-head">
+      <h2 class="section-title">Gépek</h2>
+      <p>Ezek a gépek várnak rád készletkisöprő áron — a készlet erejéig.</p>
+    </div>
 
     <!-- KUHN -->
-    <div class="brand-header">
-      <span class="brand-tag kuhn">KUHN</span>
-      <div class="brand-line"></div>
-    </div>
-    <div class="machines-grid">
-      <div class="machine-card">
-        <div class="machine-img"><img src="kuhn-01.jpg" alt="Kuhn GMD 240 hátsó oldalsó kasza" onerror="this.style.display='none'"></div>
-        <div class="machine-body">
-          <div class="machine-cat">Hátsó oldalsó kasza</div>
-          <div class="machine-name">KUHN GMD 240</div>
-          <div class="machine-price"><span class="label">Rendezvény ár</span><span class="value">3.300.000 Ft</span></div>
-          <a href="#regisztracio" class="machine-cta">Érdekel</a>
-        </div>
+    <div class="brand-block">
+      <div class="brand-head">
+        <span class="name">Kuhn</span>
+        <span class="count">08 GÉP</span>
+        <div class="rule"></div>
       </div>
-      <div class="machine-card">
-        <div class="machine-img"><img src="kuhn-02.jpg" alt="Kuhn GMD 280 hátsó oldalsó kasza" onerror="this.style.display='none'"></div>
-        <div class="machine-body">
-          <div class="machine-cat">Hátsó oldalsó kasza</div>
-          <div class="machine-name">KUHN GMD 280</div>
-          <div class="machine-price"><span class="label">Rendezvény ár</span><span class="value">3.500.000 Ft</span></div>
-          <a href="#regisztracio" class="machine-cta">Érdekel</a>
+      <div class="machines-grid">
+        <div class="machine-card">
+          <div class="machine-img"><img src="kuhn-01.jpg" alt="Kuhn GMD 240 hátsó oldalsó kasza" onerror="this.style.display='none'"></div>
+          <div class="machine-body">
+            <div class="machine-cat">Hátsó oldalsó kasza</div>
+            <div class="machine-name">KUHN GMD 240</div>
+            <div class="machine-price">
+              <div><span class="label">Rendezvény ár</span><span class="value">3.300.000 Ft</span></div>
+              <a href="#regisztracio" class="machine-cta">Érdekel</a>
+            </div>
+          </div>
         </div>
-      </div>
-      <div class="machine-card">
-        <div class="machine-img"><img src="kuhn-03.jpg" alt="Kuhn ESPRO 6000 R mulcsvetőgép" onerror="this.style.display='none'"></div>
-        <div class="machine-body">
-          <div class="machine-cat">Mulcsvetőgép</div>
-          <div class="machine-name">KUHN ESPRO 6000 R</div>
-          <div class="machine-price"><span class="label">Rendezvény ár</span><span class="value">36.600.000 Ft</span></div>
-          <a href="#regisztracio" class="machine-cta">Érdekel</a>
+        <div class="machine-card">
+          <div class="machine-img"><img src="kuhn-02.jpg" alt="Kuhn GMD 280 hátsó oldalsó kasza" onerror="this.style.display='none'"></div>
+          <div class="machine-body">
+            <div class="machine-cat">Hátsó oldalsó kasza</div>
+            <div class="machine-name">KUHN GMD 280</div>
+            <div class="machine-price">
+              <div><span class="label">Rendezvény ár</span><span class="value">3.500.000 Ft</span></div>
+              <a href="#regisztracio" class="machine-cta">Érdekel</a>
+            </div>
+          </div>
         </div>
-      </div>
-      <div class="machine-card">
-        <div class="machine-img"><img src="kuhn-04.jpg" alt="Kuhn MDS 20.2Q függesztett műtrágyaszóró" onerror="this.style.display='none'"></div>
-        <div class="machine-body">
-          <div class="machine-cat">Függesztett műtrágyaszóró</div>
-          <div class="machine-name">KUHN MDS 20.2Q</div>
-          <div class="machine-price"><span class="label">Rendezvény ár</span><span class="value">3.200.000 Ft</span></div>
-          <a href="#regisztracio" class="machine-cta">Érdekel</a>
+        <div class="machine-card">
+          <div class="machine-img"><img src="kuhn-03.jpg" alt="Kuhn ESPRO 6000 R mulcsvetőgép" onerror="this.style.display='none'"></div>
+          <div class="machine-body">
+            <div class="machine-cat">Mulcsvetőgép</div>
+            <div class="machine-name">KUHN ESPRO 6000 R</div>
+            <div class="machine-price">
+              <div><span class="label">Rendezvény ár</span><span class="value">36.600.000 Ft</span></div>
+              <a href="#regisztracio" class="machine-cta">Érdekel</a>
+            </div>
+          </div>
         </div>
-      </div>
-      <div class="machine-card">
-        <div class="machine-img"><img src="kuhn-05.jpg" alt="Kuhn MAXIMA 3 TS 6 soros szemenkénti vetőgép" onerror="this.style.display='none'"></div>
-        <div class="machine-body">
-          <div class="machine-cat">Szemenkénti vetőgép</div>
-          <div class="machine-name">KUHN MAXIMA 3 TS (6 soros)</div>
-          <div class="machine-price"><span class="label">Rendezvény ár</span><span class="value">14.500.000 Ft</span></div>
-          <a href="#regisztracio" class="machine-cta">Érdekel</a>
+        <div class="machine-card">
+          <div class="machine-img"><img src="kuhn-04.jpg" alt="Kuhn MDS 20.2Q függesztett műtrágyaszóró" onerror="this.style.display='none'"></div>
+          <div class="machine-body">
+            <div class="machine-cat">Függesztett műtrágyaszóró</div>
+            <div class="machine-name">KUHN MDS 20.2Q</div>
+            <div class="machine-price">
+              <div><span class="label">Rendezvény ár</span><span class="value">3.200.000 Ft</span></div>
+              <a href="#regisztracio" class="machine-cta">Érdekel</a>
+            </div>
+          </div>
         </div>
-      </div>
-      <div class="machine-card">
-        <div class="machine-img"><img src="kuhn-06.jpg" alt="Kuhn PERFORMER 3000 SELECT tárcsás kapás kultivátor" onerror="this.style.display='none'"></div>
-        <div class="machine-body">
-          <span class="demo-badge">Demó gép</span>
-          <div class="machine-cat">Tárcsás kapás kultivátor</div>
-          <div class="machine-name">KUHN PERFORMER 3000 SELECT</div>
-          <div class="machine-price"><span class="label">Rendezvény ár</span><span class="value">19.400.000 Ft</span></div>
-          <a href="#regisztracio" class="machine-cta">Érdekel</a>
+        <div class="machine-card">
+          <div class="machine-img"><img src="kuhn-05.jpg" alt="Kuhn MAXIMA 3 TS 6 soros szemenkénti vetőgép" onerror="this.style.display='none'"></div>
+          <div class="machine-body">
+            <div class="machine-cat">Szemenkénti vetőgép</div>
+            <div class="machine-name">KUHN MAXIMA 3 TS (6 soros)</div>
+            <div class="machine-price">
+              <div><span class="label">Rendezvény ár</span><span class="value">14.500.000 Ft</span></div>
+              <a href="#regisztracio" class="machine-cta">Érdekel</a>
+            </div>
+          </div>
         </div>
-      </div>
-      <div class="machine-card">
-        <div class="machine-img"><img src="kuhn-07.jpg" alt="Kuhn Prolander 6000 magágykészítő" onerror="this.style.display='none'"></div>
-        <div class="machine-body">
-          <div class="machine-cat">Magágykészítő</div>
-          <div class="machine-name">KUHN PROLANDER 6000</div>
-          <div class="machine-price"><span class="label">Rendezvény ár</span><span class="value">17.100.000 Ft</span></div>
-          <a href="#regisztracio" class="machine-cta">Érdekel</a>
+        <div class="machine-card">
+          <div class="machine-img"><img src="kuhn-06.jpg" alt="Kuhn PERFORMER 3000 SELECT tárcsás kapás kultivátor" onerror="this.style.display='none'"></div>
+          <div class="machine-body">
+            <span class="demo-badge">Demó gép</span>
+            <div class="machine-cat">Tárcsás kapás kultivátor</div>
+            <div class="machine-name">KUHN PERFORMER 3000 SELECT</div>
+            <div class="machine-price">
+              <div><span class="label">Rendezvény ár</span><span class="value">19.400.000 Ft</span></div>
+              <a href="#regisztracio" class="machine-cta">Érdekel</a>
+            </div>
+          </div>
         </div>
-      </div>
-      <div class="machine-card">
-        <div class="machine-img"><img src="kuhn-08.jpg" alt="Kuhn OPTIMER L 6000 rövidtárcsa" onerror="this.style.display='none'"></div>
-        <div class="machine-body">
-          <div class="machine-cat">Rövidtárcsa</div>
-          <div class="machine-name">KUHN OPTIMER L 6000</div>
-          <div class="machine-price"><span class="label">Rendezvény ár</span><span class="value">24.600.000 Ft</span></div>
-          <a href="#regisztracio" class="machine-cta">Érdekel</a>
+        <div class="machine-card">
+          <div class="machine-img"><img src="kuhn-07.jpg" alt="Kuhn Prolander 6000 magágykészítő" onerror="this.style.display='none'"></div>
+          <div class="machine-body">
+            <div class="machine-cat">Magágykészítő</div>
+            <div class="machine-name">KUHN PROLANDER 6000</div>
+            <div class="machine-price">
+              <div><span class="label">Rendezvény ár</span><span class="value">17.100.000 Ft</span></div>
+              <a href="#regisztracio" class="machine-cta">Érdekel</a>
+            </div>
+          </div>
+        </div>
+        <div class="machine-card">
+          <div class="machine-img"><img src="kuhn-08.jpg" alt="Kuhn OPTIMER L 6000 rövidtárcsa" onerror="this.style.display='none'"></div>
+          <div class="machine-body">
+            <div class="machine-cat">Rövidtárcsa</div>
+            <div class="machine-name">KUHN OPTIMER L 6000</div>
+            <div class="machine-price">
+              <div><span class="label">Rendezvény ár</span><span class="value">24.600.000 Ft</span></div>
+              <a href="#regisztracio" class="machine-cta">Érdekel</a>
+            </div>
+          </div>
         </div>
       </div>
     </div>
 
     <!-- JCB -->
-    <div class="brand-header">
-      <span class="brand-tag jcb">JCB</span>
-      <div class="brand-line"></div>
-    </div>
-    <div class="machines-grid">
-      <div class="machine-card">
-        <div class="machine-img"><img src="jcb-01.jpg" alt="JCB Fastrac 8330 traktor" onerror="this.style.display='none'"></div>
-        <div class="machine-body">
-          <div class="machine-cat">Traktor</div>
-          <div class="machine-name">JCB FASTRAC 8330</div>
-          <!-- TODO: ár Lalától -->
-          <div class="machine-price"><span class="label">Rendezvény ár</span><span class="value tbd">Kedvezményes ár a helyszínen</span></div>
-          <a href="#regisztracio" class="machine-cta">Érdekel</a>
+    <div class="brand-block">
+      <div class="brand-head">
+        <span class="name">JCB</span>
+        <span class="count">01 GÉP</span>
+        <div class="rule"></div>
+      </div>
+      <div class="machines-grid">
+        <div class="machine-card">
+          <div class="machine-img"><img src="jcb-01.jpg" alt="JCB Fastrac 8330 traktor" onerror="this.style.display='none'"></div>
+          <div class="machine-body">
+            <div class="machine-cat">Traktor</div>
+            <div class="machine-name">JCB FASTRAC 8330</div>
+            <div class="machine-price">
+              <!-- TODO: ár Lalától -->
+              <div><span class="label">Rendezvény ár</span><span class="value tbd">Kedvezményes ár a helyszínen</span></div>
+              <a href="#regisztracio" class="machine-cta">Érdekel</a>
+            </div>
+          </div>
         </div>
       </div>
     </div>
 
     <!-- JOSKIN -->
-    <div class="brand-header">
-      <span class="brand-tag joskin">JOSKIN</span>
-      <div class="brand-line"></div>
-    </div>
-    <div class="machines-grid">
-      <div class="machine-card">
-        <div class="machine-img"><img src="joskin-01.jpg" alt="Joskin Modulo2 7000 ME tartálykocsi" onerror="this.style.display='none'"></div>
-        <div class="machine-body">
-          <div class="machine-cat">Tartálykocsi</div>
-          <div class="machine-name">JOSKIN MODULO2 7000 ME</div>
-          <div class="machine-price"><span class="label">Rendezvény ár</span><span class="value">6.500.000 Ft</span></div>
-          <a href="#regisztracio" class="machine-cta">Érdekel</a>
-        </div>
+    <div class="brand-block">
+      <div class="brand-head">
+        <span class="name">Joskin</span>
+        <span class="count">05 GÉP</span>
+        <div class="rule"></div>
       </div>
-      <div class="machine-card">
-        <div class="machine-img"><img src="joskin-02.jpg" alt="Joskin Modulo2 8400 ME tartálykocsi" onerror="this.style.display='none'"></div>
-        <div class="machine-body">
-          <div class="machine-cat">Tartálykocsi</div>
-          <div class="machine-name">JOSKIN MODULO2 8400 ME</div>
-          <div class="machine-price"><span class="label">Rendezvény ár</span><span class="value">7.800.000 Ft</span></div>
-          <a href="#regisztracio" class="machine-cta">Érdekel</a>
+      <div class="machines-grid">
+        <div class="machine-card">
+          <div class="machine-img"><img src="joskin-01.jpg" alt="Joskin Modulo2 7000 ME tartálykocsi" onerror="this.style.display='none'"></div>
+          <div class="machine-body">
+            <div class="machine-cat">Tartálykocsi</div>
+            <div class="machine-name">JOSKIN MODULO2 7000 ME</div>
+            <div class="machine-price">
+              <div><span class="label">Rendezvény ár</span><span class="value">6.500.000 Ft</span></div>
+              <a href="#regisztracio" class="machine-cta">Érdekel</a>
+            </div>
+          </div>
         </div>
-      </div>
-      <div class="machine-card">
-        <div class="machine-img"><img src="joskin-03.jpg" alt="Joskin Modulo2 12000 MEB tartálykocsi" onerror="this.style.display='none'"></div>
-        <div class="machine-body">
-          <div class="machine-cat">Tartálykocsi</div>
-          <div class="machine-name">JOSKIN MODULO2 12000 MEB</div>
-          <div class="machine-price"><span class="label">Rendezvény ár</span><span class="value">11.500.000 Ft</span></div>
-          <a href="#regisztracio" class="machine-cta">Érdekel</a>
+        <div class="machine-card">
+          <div class="machine-img"><img src="joskin-02.jpg" alt="Joskin Modulo2 8400 ME tartálykocsi" onerror="this.style.display='none'"></div>
+          <div class="machine-body">
+            <div class="machine-cat">Tartálykocsi</div>
+            <div class="machine-name">JOSKIN MODULO2 8400 ME</div>
+            <div class="machine-price">
+              <div><span class="label">Rendezvény ár</span><span class="value">7.800.000 Ft</span></div>
+              <a href="#regisztracio" class="machine-cta">Érdekel</a>
+            </div>
+          </div>
         </div>
-      </div>
-      <div class="machine-card">
-        <div class="machine-img"><img src="joskin-04.jpg" alt="Joskin Tetra-Cap 5025 forgózsámolyos pótkocsi" onerror="this.style.display='none'"></div>
-        <div class="machine-body">
-          <div class="machine-cat">Három oldalra billenő forgózsámolyos pótkocsi</div>
-          <div class="machine-name">JOSKIN TETRA-CAP 5025/19DR160</div>
-          <div class="machine-price"><span class="label">Rendezvény ár</span><span class="value">8.999.000 Ft</span></div>
-          <a href="#regisztracio" class="machine-cta">Érdekel</a>
+        <div class="machine-card">
+          <div class="machine-img"><img src="joskin-03.jpg" alt="Joskin Modulo2 12000 MEB tartálykocsi" onerror="this.style.display='none'"></div>
+          <div class="machine-body">
+            <div class="machine-cat">Tartálykocsi</div>
+            <div class="machine-name">JOSKIN MODULO2 12000 MEB</div>
+            <div class="machine-price">
+              <div><span class="label">Rendezvény ár</span><span class="value">11.500.000 Ft</span></div>
+              <a href="#regisztracio" class="machine-cta">Érdekel</a>
+            </div>
+          </div>
         </div>
-      </div>
-      <div class="machine-card">
-        <div class="machine-img"><img src="joskin-05.jpg" alt="Joskin SIROKO S5013/12V szervestrágya szóró" onerror="this.style.display='none'"></div>
-        <div class="machine-body">
-          <div class="machine-cat">Szervestrágya szóró</div>
-          <div class="machine-name">JOSKIN SIROKO S5013/12V</div>
-          <div class="machine-price"><span class="label">Rendezvény ár</span><span class="value">15.500.000 Ft</span></div>
-          <a href="#regisztracio" class="machine-cta">Érdekel</a>
+        <div class="machine-card">
+          <div class="machine-img"><img src="joskin-04.jpg" alt="Joskin Tetra-Cap 5025 forgózsámolyos pótkocsi" onerror="this.style.display='none'"></div>
+          <div class="machine-body">
+            <div class="machine-cat">Három oldalra billenő forgózsámolyos pótkocsi</div>
+            <div class="machine-name">JOSKIN TETRA-CAP 5025/19DR160</div>
+            <div class="machine-price">
+              <div><span class="label">Rendezvény ár</span><span class="value">8.999.000 Ft</span></div>
+              <a href="#regisztracio" class="machine-cta">Érdekel</a>
+            </div>
+          </div>
+        </div>
+        <div class="machine-card">
+          <div class="machine-img"><img src="joskin-05.jpg" alt="Joskin SIROKO S5013/12V szervestrágya szóró" onerror="this.style.display='none'"></div>
+          <div class="machine-body">
+            <div class="machine-cat">Szervestrágya szóró</div>
+            <div class="machine-name">JOSKIN SIROKO S5013/12V</div>
+            <div class="machine-price">
+              <div><span class="label">Rendezvény ár</span><span class="value">15.500.000 Ft</span></div>
+              <a href="#regisztracio" class="machine-cta">Érdekel</a>
+            </div>
+          </div>
         </div>
       </div>
     </div>
 
     <div class="price-note">
-      ⚠️ <strong>Fontos:</strong> a feltüntetett árak <strong>kizárólag a rendezvényen résztvevőkre vonatkoznak</strong>, a készlet erejéig. Regisztrálj lent, és biztosítsd a helyed!
+      <span class="mark">!</span>
+      <p><strong>Fontos:</strong> a feltüntetett árak <strong>kizárólag a rendezvényen résztvevőkre vonatkoznak</strong>, a készlet erejéig. Regisztrálj lent, és biztosítsd a helyed!</p>
     </div>
   </div>
 </section>
 
 <!-- ===== REGISZTRÁCIÓ ===== -->
-<section class="section form-section" id="regisztracio">
+<section class="reg" id="regisztracio">
+  <div class="reg-giant">REGISZTRÁLJ</div>
   <div class="container">
-    <h2 class="section-title">Regisztrálj a <span class="yellow">rendezvényre</span></h2>
-    <p class="section-sub">Töltsd ki az alábbi űrlapot, és már vár is az ajándékcsomagod a helyszínen. A regisztráció ingyenes és kötelezettségmentes.</p>
+    <div class="section-head">
+      <h2 class="section-title">Regisztráció</h2>
+      <p>Töltsd ki az űrlapot, és már vár is az ajándékcsomagod a helyszínen. A regisztráció ingyenes és kötelezettségmentes.</p>
+    </div>
 
     <div class="form-wrap">
       <form id="reg-form" class="form-grid" novalidate>
@@ -393,7 +471,7 @@ footer .brand{font-family:'Archivo Black',sans-serif;color:var(--text);font-size
         <!-- Mailchimp honeypot -->
         <div aria-hidden="true" style="position:absolute;left:-5000px"><input type="text" name="b_859ff0560bf14ca6c051f7f8e_4774a6baa8" tabindex="-1" value=""></div>
         <div class="form-response" id="form-response"></div>
-        <button type="submit" class="submit-btn" id="submit-btn">Regisztrálok 🎁</button>
+        <button type="submit" class="submit-btn" id="submit-btn">Regisztrálok</button>
       </form>
     </div>
   </div>
@@ -402,8 +480,10 @@ footer .brand{font-family:'Archivo Black',sans-serif;color:var(--text);font-size
 <!-- ===== FOOTER ===== -->
 <footer>
   <div class="container">
-    <div class="brand">CHEMICAL SEED</div>
-    <p>© 2026 Chemical Seed Kft. · Minden jog fenntartva. Az árak a készlet erejéig, kizárólag a rendezvényen résztvevőkre érvényesek.</p>
+    <div class="footer-inner">
+      <div class="logo">Chemical Seed</div>
+      <p>© 2026 Chemical Seed Kft. · Az árak a készlet erejéig, kizárólag a rendezvényen résztvevőkre érvényesek.</p>
+    </div>
   </div>
 </footer>
 
@@ -432,6 +512,7 @@ footer .brand{font-family:'Archivo Black',sans-serif;color:var(--text);font-size
   var btn = document.getElementById('submit-btn');
   var resp = document.getElementById('form-response');
   var MC_URL = 'https://xtratech.us18.list-manage.com/subscribe/post-json?u=859ff0560bf14ca6c051f7f8e&id=4774a6baa8&f_id=0015abe6f0';
+  var MC_TAG = '3055679';
 
   function showResponse(type, msg){
     resp.className = 'form-response ' + type;
@@ -470,20 +551,21 @@ footer .brand{font-family:'Archivo Black',sans-serif;color:var(--text);font-size
       params.push(f + '=' + encodeURIComponent(form.querySelector('[name="'+f+'"]').value.trim()));
     });
     params.push('MMERGE11=' + encodeURIComponent('Igen'));
+    params.push('tags=' + encodeURIComponent(MC_TAG));
     params.push('b_859ff0560bf14ca6c051f7f8e_4774a6baa8=');
 
     var cbName = 'mcCallback_' + Date.now();
     window[cbName] = function(data){
       btn.disabled = false;
-      btn.textContent = 'Regisztrálok 🎁';
+      btn.textContent = 'Regisztrálok';
       delete window[cbName];
       if(data.result === 'success'){
         form.reset();
-        showResponse('success','✅ Sikeres regisztráció! Találkozunk július 30–31-én – az ajándékcsomagod vár a helyszínen!');
+        showResponse('success','Sikeres regisztráció! Találkozunk július 30–31-én — az ajándékcsomagod vár a helyszínen!');
       } else {
         var msg = (data.msg || '').toLowerCase();
         if(msg.indexOf('already subscribed') > -1 || msg.indexOf('már fel') > -1){
-          showResponse('success','✅ Ezzel az email címmel már regisztráltál – találkozunk a rendezvényen!');
+          showResponse('success','Ezzel az email címmel már regisztráltál — találkozunk a rendezvényen!');
         } else {
           showResponse('error','Hiba történt a küldés során. Kérjük, próbáld újra, vagy hívj minket telefonon!');
         }
@@ -494,7 +576,7 @@ footer .brand{font-family:'Archivo Black',sans-serif;color:var(--text);font-size
     script.src = MC_URL + '&' + params.join('&') + '&c=' + cbName;
     script.onerror = function(){
       btn.disabled = false;
-      btn.textContent = 'Regisztrálok 🎁';
+      btn.textContent = 'Regisztrálok';
       showResponse('error','Hálózati hiba történt. Kérjük, próbáld újra!');
     };
     document.body.appendChild(script);
